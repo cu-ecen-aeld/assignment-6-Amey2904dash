@@ -38,6 +38,7 @@ do_compile () {
 	oe_runmake
 }
 
+
 do_install () {
 	# TODO: Install your binaries/scripts here.
 	# Be sure to install the target directory with install -d first
