@@ -4,11 +4,11 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 # TODO: Set this  with the path to your assignments rep.  Use ssh protocol and see lecture notes
 # about how to setup ssh-agent for passwordless access
-SRC_URI = "git@github.com:cu-ecen-aeld/assignments-3-and-later-Amey2904dash.git;protocol=ssh;branch=main"
+SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-Amey2904dash.git;protocol=ssh;branch=main"
 
 PV = "1.0+git${SRCPV}"
 # TODO: set to reference a specific commit hash in your assignment repo
-SRCREV = "728c659794c3eb12703c8a628f722efc848fe096"
+SRCREV = "1b8c87f5c558ccddcee559150285f212d7690e5b"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://www.yoctoproject.org/docs/latest/ref-manual/ref-manual.html#var-WORKDIR
@@ -54,6 +54,7 @@ do_install () {
 	
 	#install destination directory for init script
 	install -d ${D}${sysconfdir}/init.d
+	
 	#install start-stop script in this location
 	install -m 0755 ${S}/aesdsocket-start-stop.sh ${D}${sysconfdir}/init.d
 }
